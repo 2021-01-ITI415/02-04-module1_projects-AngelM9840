@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class FollowCam : MonoBehaviour {
 
-    [Header(“Set Dynamically”)]
+    [Header("Set in Inspector")]
+	public float easing = 0.05f;
+    //public Vector2 minXY = Vector2.zero;
+
+
+    [Header("Set Dynamically")]
     public float camZ;
 
     void Awake(){
-	camZ = this.transform.position.z;
+	    camZ = this.transform.position.z;
     }
 
     // Start is called before the first frame update
@@ -27,12 +32,12 @@ public class FollowCam : MonoBehaviour {
         if (POI  == null) return;
 
         Vector3 destination = POI.transform.position;
-        //Destination.x = Mathf.Max( minXY.x, destination.x );
-        //Destination.y = Mathf.Max( minXY.y, destination.y );
-        //Destination = Vector3.Lerp(transform.position, destination, easing);
+        Destination.x = Mathf.Max( minXY.x, destination.x );
+        Destination.y = Mathf.Max( minXY.y, destination.y );
+        Destination = Vector3.Lerp(transform.position, destination, easing);
         destination.z = camZ;
         transform.position = destination;
-        //Camera.main.orthographicSize = destination.y + 10;
+        Camera.main.orthographicSize = destination.y + 10;
         }
 
 }

@@ -27,8 +27,6 @@ public class Slingshot : MonoBehaviour {
         
     }
 
-
-
     void OnMouseEnter() {
         print("Slingshot:OnMouseEnter()");
     }
