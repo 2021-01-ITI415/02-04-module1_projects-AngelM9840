@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
@@ -18,12 +17,12 @@ public class Slingshot : MonoBehaviour {
 
     private Rigidbody
 
-    //static public Vector3 LAUNCH_POS {
-    //    get {
-    //        if (S == null) return Vector3.zero;
-    //        return S.launchPos;
-    //    }
-    //}
+    static public Vector3 LAUNCH_POS {
+        get {
+            if (S == null) return Vector3.zero;
+           return S.launchPos;
+        }
+    }
 
     void Awake() {
         S = this;
