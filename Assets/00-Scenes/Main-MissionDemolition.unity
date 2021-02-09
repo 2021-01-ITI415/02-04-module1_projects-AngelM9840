@@ -855,6 +855,7 @@ GameObject:
   - component: {fileID: 792234106}
   - component: {fileID: 792234109}
   - component: {fileID: 792234110}
+  - component: {fileID: 792234111}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -958,6 +959,18 @@ MonoBehaviour:
   cloudScaleMin: 1
   cloudScaleMax: 3
   cloudSpeedMult: 0.5
+--- !u!114 &792234111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792234105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3d21b04170dc04c92d7e2f1756ef39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1098861953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1323,7 @@ GameObject:
   - component: {fileID: 1579245288}
   - component: {fileID: 1579245287}
   m_Layer: 0
-  m_Name: ProjectLine
+  m_Name: ProjectileLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

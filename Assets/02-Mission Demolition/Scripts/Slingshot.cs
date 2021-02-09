@@ -15,7 +15,7 @@ public class Slingshot : MonoBehaviour {
     public GameObject projectile;
     public bool aimingMode;
 
-    private Rigidbody
+    private Rigidbody projectileRigidBody;
 
     static public Vector3 LAUNCH_POS {
         get {
@@ -70,7 +70,7 @@ public class Slingshot : MonoBehaviour {
         }
  
         Vector3 projPos = launchPos + mouseDelta;
-        Projectile.transform.position = projPos;
+        projectile.transform.position = projPos;
  
         if ( Input.GetMouseButtonUp(0) ) {
             aimingMode = false;

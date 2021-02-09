@@ -6,7 +6,7 @@ public class FollowCam : MonoBehaviour {
 
     [Header("Set in Inspector")]
 	public float easing = 0.05f;
-    //public Vector2 minXY = Vector2.zero;
+    public Vector2 minXY = Vector2.zero;
 
 
     [Header("Set Dynamically")]
