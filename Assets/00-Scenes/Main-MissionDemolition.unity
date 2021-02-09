@@ -284,13 +284,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 792234105}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 792234111}
+        m_TargetAssemblyTypeName: MissionDemolition, Assembly-CSharp
+        m_MethodName: SwitchView
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -424,6 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278479372}
+  - component: {fileID: 278479373}
   m_Layer: 0
   m_Name: LaunchPoint
   m_TagString: Untagged
@@ -446,6 +447,18 @@ Transform:
   m_Father: {fileID: 728771837}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
+--- !u!122 &278479373
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278479371}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4290756543
+  m_Size: 3
 --- !u!1 &321889519
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +854,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8544f1d8fc9f443b06741c262af6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabProjectile: {fileID: 5223759460622859443, guid: ba945deebfb321144b91ebdcf8085bf7, type: 3}
+  velocityMult: 8
   launchPoint: {fileID: 5223759460622859443, guid: ba945deebfb321144b91ebdcf8085bf7, type: 3}
+  launchPos: {x: 0, y: 0, z: 0}
+  projectile: {fileID: 0}
+  aimingMode: 0
 --- !u!1 &792234105
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +958,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aba28f91dd099a42b5ab9ab9f54e29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easing: 0.05
+  minXY: {x: 0, y: 0}
+  camZ: 0
 --- !u!114 &792234110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,6 +992,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3d21b04170dc04c92d7e2f1756ef39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uitLevel: {fileID: 537466916}
+  uitShots: {fileID: 420986096}
+  uitButton: {fileID: 49550706}
+  castlePos: {x: 50, y: -9.5, z: 0}
+  castles:
+  - {fileID: 1689687170801136936, guid: 98a3e4f8b9376f04a95afe0327ca7054, type: 3}
+  - {fileID: 4968537411036061924, guid: 3b1bc65be72e7af4f8d9c5388bebd869, type: 3}
+  - {fileID: 6511884567590325865, guid: e0f2ccec1fcdbd64ebe8ba052cbfcc1e, type: 3}
+  - {fileID: 2854906103838253729, guid: 7ce41aee37c29904683027a49ff7c644, type: 3}
+  level: 0
+  levelMax: 0
+  shotsTaken: 0
+  castle: {fileID: 0}
+  mode: 0
+  showing: Show Slingshot
 --- !u!1 &1098861953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,6 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06fd597e3bbbc0540a7540c04c8dc8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDist: 0.1
 --- !u!120 &1579245288
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1392,7 +1429,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.09859085
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1447,7 +1484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579245286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100, y: -10, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectLine : MonoBehaviour {
+public class ProjectileLine : MonoBehaviour {
+    static public ProjectileLine S;
+
     [Header("Set in Inspector")]
     public float minDist = 0.1f;
 
@@ -43,8 +45,8 @@ public class ProjectLine : MonoBehaviour {
             return;
         }
         if ( points.Count == 0 ) {
-            Vector3 launchPosDiff = pt - Slingshot.LAUNCH.POS;
-            point.Add( pt + launchPosDiff );
+            Vector3 launchPosDiff = pt - Slingshot.LAUNCH_POS;
+            points.Add( pt + launchPosDiff );
             points.Add(pt);
             line.positionCount = 2;
             line.SetPosition(0, points[0] );
@@ -53,7 +55,7 @@ public class ProjectLine : MonoBehaviour {
         } else {
             points.Add( pt );
             line.positionCount = points.Count;
-            line.SetPosition( points.Count-1, lastpoint );
+            line.SetPosition( points.Count-1, lastPoint );
             line.enabled = true;
         }
     }
