@@ -8,7 +8,7 @@ public class Slingshot : MonoBehaviour {
 
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
-    //public float velocityMult = 8f;
+    public float velocityMult = 8f;
  
     [Header("Set Dynamically")]
     public GameObject launchPoint;
@@ -16,18 +16,18 @@ public class Slingshot : MonoBehaviour {
     public GameObject projectile;
     public bool aimingMode;
 
-    private RigidBody
+    private Rigidbody
 
-    static public Vector3 LAUNCH_POS {
-        get {
-            if (S == null) return Vector3.zero;
-            return S.launchPos;
-        }
-    }
+    //static public Vector3 LAUNCH_POS {
+    //    get {
+    //        if (S == null) return Vector3.zero;
+    //        return S.launchPos;
+    //    }
+    //}
 
     void Awake() {
-        S = this
-        Transform launchPointTrans = transform.Find("LaunchPoint");
+        S = this;
+        Transform launchPointTrans = transform.FindChild("LaunchPoint");
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive( false ); 
         launchPos = launchPointTrans.position;
@@ -79,6 +79,8 @@ public class Slingshot : MonoBehaviour {
             projectileRigidBody.velocity = -mouseDelta * velocityMult;
             FollowCam.POI = projectile;
             projectile = null;
+            MissionDemolition.ShotFired();
+            ProjectileLine.S.poi = projectile;
         }
 
     }
