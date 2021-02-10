@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Slingshot : MonoBehaviour {
+public class Slingshot_Prototype : MonoBehaviour {
 
-    static private Slingshot S;
+    static private Slingshot_Prototype S;
 
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;

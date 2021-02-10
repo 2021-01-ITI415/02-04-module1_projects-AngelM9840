@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AppleTree : MonoBehaviour{
+public class AppleTree_Prototype : MonoBehaviour{
     [Header("Set in Inspector")]
 
     public GameObject applePrefab;
