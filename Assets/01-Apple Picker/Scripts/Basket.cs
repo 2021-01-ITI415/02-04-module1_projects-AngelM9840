@@ -34,7 +34,7 @@ public class Basket : MonoBehaviour
     void OnCollisionEnter ( Collision coll )
     {
         GameObject collidedWith = coll.gameObject;
-        if (collidedWith.tag == "Apple" ){
+        if (collidedWith.tag == "Projectile" ){
             Destroy( collidedWith);
 
             int score = int.Parse( scoreGT.text );

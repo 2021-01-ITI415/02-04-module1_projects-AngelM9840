@@ -7,41 +7,51 @@ public class Basket_Prototype : MonoBehaviour
 {
     [Header("Set Dynamically")]
 
-    public Text scoreGT;
+    public Text scoreGT_2;
+    public float speed = 2.5f;
+    public float leftandRightEdge = 5.5f;
+    public float chancetoChangeDirections = 0.02f;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject scoreGO = GameObject.Find("ScoreCounter");
-        scoreGT = scoreGO.GetComponent<Text>();
-        scoreGT.text = "0";
+        GameObject scoreGO_2 = GameObject.Find("ScoreCounter_2");
+        scoreGT_2 = scoreGO_2.GetComponent<Text>();
+        scoreGT_2.text = "0";
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos2D = Input.mousePosition;
+        Vector3 pos = transform.position;
+        pos.x += speed * Time.deltaTime;
+        transform.position = pos;
 
-        mousePos2D.z = -Camera.main.transform.position.z;
+        if (pos.x < -leftandRightEdge ) {
+            speed = Mathf.Abs(speed);
+        } else if  (pos.x > leftandRightEdge ) {
+            speed = -Mathf.Abs(speed);
+        } 
+    }
 
-        Vector3 mousePos3D = Camera.main.ScreenToWorldPoint( mousePos2D );
-
-        Vector3 pos = this.transform.position;
-        pos.x = mousePos3D.x;
-        this.transform.position = pos;
+    void FixedUpdate() 
+    {
+        if ( Random.value < chancetoChangeDirections ) {
+            speed *= -1;
+        }
     }
 
     void OnCollisionEnter ( Collision coll )
     {
         GameObject collidedWith = coll.gameObject;
-        if (collidedWith.tag == "Apple" ){
+        if (collidedWith.tag == "Projectile" ){
             Destroy( collidedWith);
 
-            int score = int.Parse( scoreGT.text );
+            int score = int.Parse( scoreGT_2.text );
             score += 100;
-            scoreGT.text = score.ToString();
+            scoreGT_2.text = score.ToString();
 
-            if (score > HighScore.score) {
+            if (score > GameScore.score) {
                 HighScore.score = score;
             }
         }
