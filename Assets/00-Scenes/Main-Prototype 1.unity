@@ -524,7 +524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5237130008147123822, guid: 66dc2e8243f8bb346b75f860383a5e89, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2375
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 5237130008147123822, guid: 66dc2e8243f8bb346b75f860383a5e89, type: 3}
       propertyPath: m_LocalPosition.y
@@ -667,7 +667,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'High Score: 1000'
+  m_Text: 'High Score: 0'
 --- !u!222 &695065532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -776,7 +776,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -275, y: -10}
-  m_SizeDelta: {x: 10, y: 32}
+  m_SizeDelta: {x: 256, y: 32}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1444230239
 MonoBehaviour:
