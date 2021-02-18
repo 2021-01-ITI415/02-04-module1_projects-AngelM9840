@@ -50,10 +50,7 @@ public class Basket_Prototype : MonoBehaviour
             int score = int.Parse( scoreGT_2.text );
             score += 100;
             scoreGT_2.text = score.ToString();
-
-            if (score > GameScore.score) {
-                HighScore.score = score;
             }
         }
-    }
 }
+
