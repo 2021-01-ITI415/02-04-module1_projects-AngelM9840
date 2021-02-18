@@ -126,6 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreGT_2: {fileID: 0}
-  speed: 6.5
+  speed: 7.5
   leftandRightEdge: 5.5
   chancetoChangeDirections: 0.02
